@@ -74,6 +74,8 @@ public:
 
     void display()
     {
+        int FRONT_Position = FRONT;
+        int REAR_Position = REAR;
         //cek apakah antrian kosong
         if(FRONT == -1)
         {
@@ -84,31 +86,31 @@ public:
         cout << "\nElement in the queue are....\n";
 
         //jika FRONT <= REAR, iterasi dari FRONT hingga REAR
-        if(FRONT <= REAR)
+        if(FRONT_Position <= REAR_Position)
         {
-            while (FRONT <= REAR)
+            while (FRONT_Position <= REAR_Position)
             {
-                cout << queue_array[FRONT] << " ";
-                FRONT++;
+                cout << queue_array[FRONT_Position] << " ";
+                FRONT_Position++;
             }
             cout << endl;
         }
         else
         {
             //jika FRONT> REAR, iterasi dari FRONT hingga akhir array
-            while(FRONT <= max -1)
+            while(FRONT_Position <= max -1)
             {
-                cout << queue_array[FRONT] << " ";
-                FRONT++;
+                cout << queue_array[FRONT_Position] << " ";
+                FRONT_Position++;
             }
 
-            FRONT = 0;
+            FRONT_Position = 0;
 
             //iterasi dari awal array hingga REAR
-            while(FRONT <= REAR)
+            while(FRONT_Position <= REAR_Position)
             {
-                cout << queue_array[FRONT] << " ";
-                FRONT++;
+                cout << queue_array[FRONT_Position] << " ";
+                FRONT_Position++;
             }
             cout << endl;
         }
@@ -160,9 +162,13 @@ int main()
                 break;
             }
             }
-             
+        }
+        catch (exception& e)
+        {
+            cout << "Check for the values entered." << endl;
         }
     }
     
+    return 0;
 }
 
