@@ -21,6 +21,13 @@ public:
         cout << "Enter a number";
         cin >> num;
         cout << endl;
+
+        //cek apakah antrian penuh
+        if ((FRONT == 00 && REAR == max - 1) || (FRONT == REAR + 1))
+        {
+            cout << "\nQueues overlflow\n";
+            return;
+        }
     }
 };
 int main()
